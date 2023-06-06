@@ -39,6 +39,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.js" integrity="sha512-UNbeFrHORGTzMn3HTt00fvdojBYHLPxJbLChmtoyDwB6P9hX5mah3kMKm0HHNx/EvSPJt14b+SlD8xhuZ4w9Lg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
     <script src="https://uicdn.toast.com/tui-image-editor/latest/tui-image-editor.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
     
     <div class="container my-5">
         <div class="row">
@@ -73,6 +74,8 @@
         // JavaScript code goes here
         var imageEditor = new tui.ImageEditor('#tui-image-editor-container', {
             includeUI: {
+                // theme: whiteTheme,
+                menuBarPosition: 'bottom',
                 menu: ['shape','text', 'icon'],
                 loadImage: false,
                 loadImage: {
@@ -81,18 +84,20 @@
                 },
                 initMenu: 'text',
                 uiSize: {
-                    height: '100vh'
+                    height: '70vh',
                 } // Initial menu option to be selected
             },
             cssMaxWidth: 600,
             cssMaxHeight: 400,
+            padding: 100,
             selectionStyle: {
                 cornerSize: 50,
                 rotatingPointOffset: 100,
             },
         });
         $('.tui-image-editor-load-btn').parent().css('display','none');
-
+        $('.tui-image-editor-header-logo').css('display','none');
+        
         try {
             
             $('#formTUI').submit(function(e){

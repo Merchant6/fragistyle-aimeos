@@ -194,7 +194,7 @@ return $routes + [
 	'madmin' => [
 		'cache' => [
 			'manager' => [
-				// 'name' => 'None', // Disable caching for development
+				'name' => 'None', // Disable caching for development
 			],
 		],
 		'log' => [
